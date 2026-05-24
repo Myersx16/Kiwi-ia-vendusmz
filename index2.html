@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>10 Prompts Grátis · ChatGPT, Gemini & IA | Ebook Prompts Completos</title>
+  <!-- Google Fonts: Inter + fallback Satoshi -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (ícones limpos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Satoshi', 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: #111;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-sm {
+      padding: 48px 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #2c2e31;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      font-weight: 400;
+    }
+
+    /* Botão CTA verde */
+    .btn-green {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #4CAF50;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(76, 175, 80, 0.2);
+    }
+
+    .btn-green:hover {
+      background: #3d9c41;
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(76, 175, 80, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #4CAF50;
+      color: #1e4620;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #4CAF10;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    /* hero layout */
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #e9f7eb;
+      color: #2e7d32;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-feature {
+      display: flex;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-feature span {
+      font-size: 0.9rem;
+      background: #F5F5F5;
+      padding: 6px 14px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mock-small {
+      background: #F9F9F9;
+      border-radius: 32px;
+      padding: 20px 24px;
+      text-align: center;
+      max-width: 280px;
+      border: 1px solid #eef2f0;
+    }
+
+    /* grid de prompts */
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .prompt-card {
+      background: #FFFFFF;
+      border: 1px solid #e9ecef;
+      border-radius: 28px;
+      padding: 1.6rem;
+      transition: box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .prompt-card:hover {
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+      border-color: #d0dae4;
+    }
+
+    .prompt-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .prompt-code {
+      background: #F5F7FA;
+      padding: 1.2rem;
+      border-radius: 20px;
+      font-family: 'Menlo', 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.45;
+      color: #1f2937;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0.8rem 0 1rem;
+      border-left: 3px solid #4CAF50;
+    }
+
+    .copy-btn {
+      background: none;
+      border: 1px solid #d4d9e2;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: 0.15s;
+      font-family: inherit;
+      background: white;
+    }
+
+    .copy-btn:hover {
+      background: #4CAF50;
+      color: white;
+      border-color: #4CAF50;
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000000dd;
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      z-index: 1000;
+      pointer-events: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* CTA flutuante (opcional) + destaque */
+    .cta-strip {
+      background: #F5F5F5;
+      border-radius: 48px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .cta-strip h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #eceef2;
+      font-size: 0.8rem;
+      color: #5b6e8c;
+    }
+
+    @media (max-width: 800px) {
+      .prompts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      section {
+        padding: 48px 0;
+      }
+      .hero-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-feature {
+        justify-content: center;
+      }
+    }
+
+    i.icon-margin {
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section style="padding-top: 60px; padding-bottom: 20px;">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-gift"></i> Pacote gratuito · 10 prompts validados
+        </div>
+        <h1>10 Prompts Grátis Que Vão Economizar 5h da Sua Semana</h1>
+        <p style="font-size: 1.2rem; color: #2c3e3f; margin-bottom: 1rem;">
+          Use esses prompts no ChatGPT, Gemini, Deepseek ou Claude hoje. <strong>Sem cadastro</strong>, é só copiar e colar.
+        </p>
+        <div class="hero-feature">
+          <span><i class="fas fa-bolt"></i> Testados 2026</span>
+          <span><i class="fas fa-language"></i> PT-BR otimizado</span>
+          <span><i class="fas fa-infinity"></i> Funciona em qualquer IA</span>
+        </div>
+        <div style="margin-top: 32px;">
+          <a href="Index.html" class="btn-green" id="cta-hero-vendas">
+            <i class="fas fa-store"></i> Quero o ebook com os prompts completos
+          </a>
+        </div>
+      </div>
+      <div class="mock-small">
+        <i class="fas fa-file-alt" style="font-size: 2.8rem; color: #4CAF50; margin-bottom: 12px; display: inline-block;"></i>
+        <p style="font-weight: 700; margin-top: 8px;">Kit completo <span style="background: #4CAF50; color: white; padding: 2px 12px; border-radius: 30px; font-size: 0.7rem;">+50 prompts</span></p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Bônus: planilha de estratégias e prompts para engajamento real</p>
+        <div style="margin-top: 16px;"><i class="fas fa-star" style="color: #FFB800;"></i><i class="fas fa-star" style="color: #FFB800;"></i><i class="fas fa-star" style="color: #FFB800;"></i><i class="fas fa-star" style="color: #FFB800;"></i><i class="fas fa-star" style="color: #FFB800;"></i> <span style="font-size: 0.7rem;">+150 downloads</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DE PROMPTS GRATUITOS (10 CARDS) -->
+<section style="background-color: #FEFEFE; border-top: 1px solid #F0F2F5;">
+  <div class="container">
+    <h2>⚡ 10 Prompts Prontos Para Usar Agora</h2>
+    <div class="section-sub">
+      Copie, cole no seu assistente IA favorito e veja resultados imediatos. Cada um foi desenhado para entregar respostas de alto valor.
+    </div>
+    
+    <div class="prompts-grid" id="promptsGrid">
+      <!-- Os 10 prompts serão injetados via JS para facilitar manutenção, mas garantindo HTML completo com conteúdo -->
+    </div>
+
+    <!-- Call to action pós-prompts -->
+    <div class="cta-strip" style="margin-top: 3rem;">
+      <h3>✨ Gostou desses 10 prompts?</h3>
+      <p style="margin: 0.5rem auto 1rem; max-width: 550px;">A versão completa tem <strong>25 prompts testados</strong> + bônus de 50 prompts para varios nichos.</p>
+      <a href="https://seudominio.com.br/ebook-prompts" target="_blank" class="btn-green" id="cta-bottom-vendas">
+        <i class="fas fa-shopping-cart"></i> Adquirir ebook Prompts que fazem o trabalho para voce
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.7rem;">✔ Entrega imediata · 3 dias de garantia</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 — Prompts que fazem o trabalho para você. Todos os prompts são de uso livre. A versão completa com 50 prompts + bônus está disponível no site oficial.</p>
+    <p style="margin-top: 10px;"><i class="fas fa-robot"></i> Compatível com ChatGPT, Gemini, DeepSeek, Claude e Copilot.</p>
+  </div>
+</footer>
+
+<script>
+  // Lista com 10 prompts reais e de alta qualidade (título + conteúdo)
+  const promptsData = [
+    {
+      title: "🎯 5 hooks para Reels",
+      content: "Escreva 5 hooks para Reels sobre [assunto] que parem o scroll. Use gatilhos de curiosidade, urgência e 'você sabia?'. Tom: descontraído, foco em engajamento imediato."
+    },
+    {
+      title: "✍️ Texto direto para vender",
+      content: "Reescreva este texto para soar mais direto e vender mais: [insira seu texto aqui]. Use linguagem persuasiva, elimine palavras desnecessárias, adicione prova social implícita e finalize com call to action."
+    },
+    {
+      title: "📸 10 ideias de carrossel",
+      content: "Gere 10 ideias de carrossel para Instagram sobre [seu nicho]. Cada ideia deve incluir título, estrutura de 5 a 7 slides e uma sugestão de legendas com perguntas para engajar nos comentários."
+    },
+    {
+      title: "📈 Legenda viral + CTA",
+      content: "Crie 3 variações de legenda para um post sobre [tópico]. A primeira emocional, a segunda educativa e a terceira com humor. Sempre termine com uma pergunta ou chamada para ação. Máximo 180 caracteres."
+    },
+    {
+      title: "🤖 Automação de comentários",
+      content: "Quero respostas automáticas para comentários comuns no Instagram: ‘preço’, ‘como comprar’, ‘link’. Gere 3 respostas curtas e personalizáveis com emojis e tom amigável."
+    },
+    {
+      title: "📅 Calendário semanal de posts",
+      content: "Crie um calendário de 7 dias para Instagram sobre [assunto principal]. Cada dia: tipo de conteúdo (Reels, carrossel, estático), tema principal e 3 hashtags nichadas. Inclua storytelling."
+    },
+    {
+      title: "🧠 Storytelling persuasivo",
+      content: "Transforme este fato [inserir fato] em uma história envolvente de 60 segundos para Reels. Use gancho inicial, conflito ou curiosidade e uma conclusão que leve à ação."
+    },
+    {
+      title: "🔍 Bio profissional + link",
+      content: "Escreva 4 versões de bio para Instagram para [tipo de negócio/perfil]. Incluir emojis, proposta de valor, um diferencial e um call-to-action para link na bio. Máx 150 caracteres."
+    },
+    {
+      title: "💡 Ideias de perguntas pra engajar",
+      content: "Liste 10 perguntas criativas sobre [seu tema] que incentivem os seguidores a responder nos stories/feed. Perguntas que gerem identificação e compartilhamento."
+    },
+    {
+      title: "⚡ Hashtag estratégica + nicho",
+      content: "Sugira uma combinação de 15 hashtags para uma conta de [seu nicho] no Instagram: 5 de alto alcance, 5 médias, 5 específicas. Explique brevemente o critério de escolha."
+    }
+  ];
+
+  // Função para criar os cards dinamicamente, garantindo HTML responsivo e botão copiar
+  function buildPromptsGrid() {
+    const gridContainer = document.getElementById('promptsGrid');
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+    promptsData.forEach((prompt, idx) => {
+      const card = document.createElement('div');
+      card.className = 'prompt-card';
+      
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'prompt-title';
+      titleDiv.innerHTML = `<i class="fas fa-terminal" style="color:#4CAF50; font-size:1.3rem;"></i> ${prompt.title}`;
+      
+      const codeBlock = document.createElement('div');
+      codeBlock.className = 'prompt-code';
+      codeBlock.innerText = prompt.content;
+      // ID único para copiar
+      const uniqueId = `promptText_${idx}`;
+      codeBlock.setAttribute('id', uniqueId);
+      
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copiar prompt';
+      copyBtn.setAttribute('data-copy-id', uniqueId);
+      
+      copyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const textToCopy = document.getElementById(uniqueId)?.innerText || '';
+        if (!textToCopy) return;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToastMessage('✅ Prompt copiado! Use na sua IA favorita.', '#4CAF50');
+          // feedback visual no botão
+          const originalHTML = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+          setTimeout(() => {
+            copyBtn.innerHTML = originalHTML;
+          }, 1800);
+        }).catch(() => {
+          showToastMessage('❌ Erro ao copiar. Tente manualmente.', '#e55353');
+        });
+      });
+      
+      card.appendChild(titleDiv);
+      card.appendChild(codeBlock);
+      card.appendChild(copyBtn);
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // funcao toast simples
+  function showToastMessage(message, bgColor = '#000000dd') {
+    let existingToast = document.querySelector('.toast-msg');
+    if(existingToast) existingToast.remove();
+    const toast = document.createElement('div');
+    toast.className = 'toast-msg';
+    toast.innerText = message;
+    toast.style.backgroundColor = bgColor;
+    document.body.appendChild(toast);
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transition = 'opacity 0.2s';
+      setTimeout(() => toast.remove(), 300);
+    }, 2400);
+  }
+
+  // Adicionar também interceptação dos botões de CTA para site de vendas (link externo)
+  // Mas como solicitado, os links devem apontar para site de vendas real. Usaremos # temporário trocando para demo real.
+  // Caso cliente queira colocar seu link de vendas real: recomendamos trocar href em produção.
+  // Aqui já estão links de exemplo "https://seudominio.com.br/ebook-prompts" - podemos manter assim para demonstração.
+  // Ao mesmo tempo, deixamos claro que são links externos.
+  // Adicionar comportamento para garantir que todos os CTAs abram link de vendas em nova aba (target _blank) sem prejudicar UX.
+  
+  function enhanceExternalLinks() {
+    const allCtas = document.querySelectorAll('#cta-hero-vendas, #cta-bottom-vendas, .btn-green[href*="ebook-prompts"]');
+    allCtas.forEach(link => {
+      if(link.getAttribute('href') && !link.getAttribute('target')) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+      // garantir que exiba mensagem de redirecionamento opcional (apenas para demonstrar engajamento)
+      link.addEventListener('click', (e) => {
+        // sem interferir, apenas registro simbólico
+        console.log('Redirecionando para o site de vendas do ebook completo');
+      });
+    });
+  }
+  
+  // Para os botões "Quero os 50 prompts completos" garantir que usem o mesmo estilo.
+  // Além disso, adicionar uma pequena mensagem amigável em dispositivos (opcional, mas não obrigatório)
+  // Inicialização do grid e melhorias
+  document.addEventListener('DOMContentLoaded', () => {
+    buildPromptsGrid();
+    enhanceExternalLinks();
+    
+    // Garantir que qualquer link interno com âncora funcione suavemente caso haja alguma (opcional)
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const hash = this.getAttribute('href');
+        if (hash && hash !== '#') {
+          const target = document.querySelector(hash);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+    
+    // Simular estatística de cópia para engajamento (apenas UX)
+    // Adicionar classe extra para responsividade, tudo já ok.
+  });
+  
+  // fallback para cross-browser copiar
+  if (!navigator.clipboard) {
+    // fallback manual para versões antigas
+    window.copyFallback = (text) => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showToastMessage('📋 Prompt copiado (modo compatibilidade)', '#2c3e50');
+    };
+    // modificar o comportamento nos botões? faremos um wrapper dentro do evento, mas já usamos clipboard.
+    // como fallback, podemos substituir no evento de clique se necessário (mas vamos manter a lógica principal)
+    // Adicionar melhoria: recapturar todos os botões copy após carregamento dinâmico.
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.copy-btn').forEach(btn => {
+        if (!btn.hasAttribute('data-fallback-bound')) {
+          btn.setAttribute('data-fallback-bound', 'true');
+          const oldClick = btn.onclick;
+          btn.addEventListener('click', (e) => {
+            const targetId = btn.getAttribute('data-copy-id');
+            if (targetId) {
+              const textElem = document.getElementById(targetId);
+              if (textElem && !navigator.clipboard) {
+                e.preventDefault();
+                window.copyFallback(textElem.innerText);
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
+                setTimeout(() => btn.innerHTML = original, 1500);
+              }
+            }
+          });
+        }
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+</script>
+</body>
+</html>

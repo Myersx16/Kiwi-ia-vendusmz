@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Prompts que fazem o trabalho para você | Ebook</title>
+  <!-- Google Fonts: Inter + Satoshi fallback com sistema -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (ícones clean) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Satoshi', 'Helvetica Neue', sans-serif;
+      background: white;
+      color: #000000;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* container responsivo */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* seções */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-bg-light {
+      background-color: #F5F5F5;
+    }
+
+    /* tipografia */
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subhead {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #2c2c2c;
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+      font-weight: 400;
+    }
+
+    /* botão CTA principal */
+    .btn-primary {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 1rem 2.2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.25);
+      letter-spacing: -0.2px;
+    }
+
+    .btn-primary:hover {
+      background-color: #3e9c41;
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(76, 175, 80, 0.3);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    /* hero layout */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1.2;
+      min-width: 280px;
+    }
+
+    .hero-mockup {
+      flex: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mockup-card {
+      background: #F5F5F5;
+      border-radius: 32px;
+      padding: 24px 28px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 320px;
+      width: 100%;
+      border: 1px solid #eaeef2;
+      transition: transform 0.2s;
+    }
+
+    .mockup-cover-icon {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+
+    .mockup-title {
+      font-weight: 800;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .mockup-badge {
+      background: #4CAF50;
+      color: white;
+      border-radius: 40px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .mockup-author {
+      font-size: 0.85rem;
+      color: #4b5563;
+      margin-top: 0.5rem;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      color: #2d2d2d;
+      margin: 1.5rem 0 2rem;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    /* cards 3 colunas */
+    .cards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 2rem 1.8rem;
+      flex: 1 1 260px;
+      text-align: center;
+      transition: all 0.2s ease;
+      border: 1px solid #efefef;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+    }
+
+    .card i {
+      font-size: 2.6rem;
+      color: #4CAF50;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card p {
+      color: #3a3a3a;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    /* seção bônus + preço */
+    .bonus-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .bonus-item {
+      background: white;
+      border-radius: 24px;
+      padding: 1.6rem;
+      flex: 1 1 240px;
+      text-align: center;
+      border: 1px solid #e9ecef;
+    }
+
+    .bonus-item i {
+      font-size: 2rem;
+      color: #4CAF50;
+      margin-bottom: 0.8rem;
+    }
+
+    .price-area {
+      background: white;
+      max-width: 500px;
+      margin: 2rem auto 0;
+      padding: 1.8rem 2rem;
+      border-radius: 36px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .price-old {
+      font-size: 1.4rem;
+      color: #888;
+      text-decoration: line-through;
+      margin-right: 12px;
+    }
+
+    .price-new {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #000;
+    }
+
+    .price-info {
+      margin: 0.8rem 0 1.2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .cta-button-large {
+      font-size: 1.3rem;
+      padding: 1rem 2rem;
+      width: 100%;
+      max-width: 320px;
+      margin-top: 10px;
+    }
+
+    /* FAQ / depoimento extra - seção adicional */
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+
+    .testimonial i {
+      font-size: 2rem;
+      color: #4CAF50;
+      opacity: 0.6;
+    }
+
+    .testimonial p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .faq-col {
+      flex: 1 1 280px;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-a {
+      color: #3e3e3e;
+      font-size: 0.95rem;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #e2e2e2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 0;
+      font-size: 0.85rem;
+      color: #6c757d;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 24px;
+      }
+      section {
+        padding: 56px 0;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .btn-primary {
+        padding: 0.9rem 1.6rem;
+      }
+      .cards-grid {
+        gap: 1.2rem;
+      }
+    }
+
+    /* animação sutil */
+    .fade-up {
+      animation: fadeUp 0.6s ease-out;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    button, .btn-primary {
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body>
+
+<section style="padding-top: 48px; padding-bottom: 0;">
+  <div class="container">
+    <div class="hero fade-up">
+      <div class="hero-content">
+        <h1>Pare de perder horas escrevendo prompts ruins</h1>
+        <div class="hero-sub">
+          Receba mais de 65 prompts poderosos testados para criar posts, vender mais e estudar em 5 minutos
+        </div>
+        <a href="#comprar" class="btn-primary" id="hero-cta">
+          <i class="fas fa-download" style="margin-right: 8px;"></i> Quero os prompts agora
+        </a>
+      </div>
+      <div class="hero-mockup">
+        <div class="mockup-card">
+          <div class="mockup-cover-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <div class="mockup-title">Prompts<br>que fazem<br>o trabalho</div>
+          <div class="mockup-badge">prompts poderosos + Bônus (50 Prompts pra diferentes nichos + Checklist)</div>
+          <div class="mockup-author">⚡ Edição 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção O que você vai receber (3 cards) -->
+<section>
+  <div class="container">
+    <h2>O que você vai receber</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <i class="fas fa-paste"></i>
+        <h3>Prompts prontos pra colar</h3>
+        <p>Sem precisar adaptar, funciona na primeira tentativa. Copie, cole e veja resultados imediatos.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Testados em 2026</h3>
+        <p>Atualizados pro algoritmo atual do Instagram, Facebook e boa ferramenta para os estudos.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-robot"></i>
+        <h3>Automação em 5 minutos</h3>
+        <p>Estruturas prontas para criar reels, posts, carrosséis e legendas que vendem, sem estresse criativo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seção de bônus + Preço (comprar) + chamada final -->
+<section id="comprar" class="section-bg-light">
+  <div class="container">
+    <h2>🔥 Bônus exclusivos + acesso vitalício</h2>
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <i class="fas fa-clock"></i>
+        <h3>Atualização 2026</h3>
+        <p>Prompts revisados e calibrados para o novo feed e novos recursos de IA.</p>
+      </div>
+      <div class="bonus-item">
+        <i class="fas fa-chart-simple"></i>
+        <h3>Checklist + bônus</h3>
+        <p>Checklist de Otimização + ebook com +50 prompts.</p>
+      </div>
+      <div class="bonus-item">
+        <i class="fas fa-headset"></i>
+        <h3>Suporte</h3>
+        <p>Grupo VIP de dúvidas e atualizações por e-mail.</p>
+      </div>
+    </div>
+
+    <div class="price-area">
+      <div>
+        <span class="price-old">184,00 Mzn</span>
+        <span class="price-new">137,00 Mzn</span>
+      </div>
+      <div class="price-info">À vista · Pagamento único · Acesso imediato em PDF</div>
+      <a href="#" class="btn-primary cta-button-large" id="buy-now-btn">
+        <i class="fas fa-lock" style="margin-right: 8px;"></i> Garantir minha cópia
+      </a>
+      <p style="font-size: 0.75rem; margin-top: 1rem; color: #666;">✔ 3 dias de garantia incondicional</p>
+    </div>
+  </div>
+</section>
+
+<!-- depoimento rápido + confiança -->
+<section>
+   <div class="container">
+    <div class="testimonial">
+      <i class="fas fa-quote-left"></i>
+      <p>"Nunca pensei que criar conteúdo pudesse ser tão rápido. Usei os prompts e em menos de uma hora gerei uma semana de posts. Minhas views aumentaram 130%."</p>
+      <strong>— Mariana R., criadora de conteúdo</strong>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="testimonial">
+      <i class="fas fa-quote-left"></i>
+      <p>"Depois de ter comprado o ebook, minhas notas na faculdade melhoraram significativamente e tive mais tempo livre para os meus afazeres."</p>
+      <strong>— Julio Manjate, Estudante Universitário</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ simples -->
+<section class="section-bg-light">
+  <div class="container">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq-grid">
+      <div class="faq-col">
+        <div class="faq-q">📘 Como recebo o material?</div>
+        <div class="faq-a">Imediatamente após a compra, você recebe um e-mail com o link para download do PDF + arquivo interativo com os 50 prompts.</div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-q">🤖 Funciona pra qualquer nicho?</div>
+        <div class="faq-a">Sim, os prompts são versáteis e adaptáveis para moda, saúde, coaching, marketing digital e mais. Já testamos em 12 segmentos.</div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-q">🔄 Preciso saber usar IA avançada?</div>
+        <div class="faq-a">Nenhum conhecimento prévio. Basta copiar e colar no ChatGPT, DeepSeek, Gemini ou qualquer assistente.</div>
+      </div>
+    </div>
+    <hr>
+    <div style="text-align: center; margin-top: 1rem;">
+      <a href="#hero-cta" class="btn-primary" style="background-color: #000; box-shadow: none;">📲 Quero começar agora</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Prompts que fazem o trabalho para você · Todos os direitos reservados</p>
+    <p style="margin-top: 8px;">Este produto não afilia-se ao Instagram ou Meta. Resultados podem variar conforme aplicação.</p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // Smooth scroll para links internos (âncoras)
+    const allLinks = document.querySelectorAll('a[href^="#"]');
+    allLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          // opcional: adicionar pequena URL update sem recarregar
+          history.pushState(null, null, targetId);
+        }
+      });
+    });
+
+    // função de alerta para compra demo - Simula conversão 
+    // com foco na conversão, botões de compra exibem modal simples
+    const buyBtns = document.querySelectorAll('#buy-now-btn, #hero-cta');
+    // trata também o botão "Quero começar agora" do rodapé
+    const footerCta = document.querySelector('footer .btn-primary');
+    if (footerCta) {
+      buyBtns.forEach(btn => {
+        if(btn !== footerCta) {} // já incluso no seletor
+      });
+      const allPurchaseTriggers = [...buyBtns, footerCta].filter(Boolean);
+      allPurchaseTriggers.forEach(btn => {
+        btn.addEventListener('click', function(ev) {
+          // Se for o hero-cta, apenas rola suavemente para a compra (já tratado pelo scroll)
+          // mas se for botão de compra real, simula redirecionamento / modal de conversão.
+          if (this.id === 'hero-cta') {
+            // o scroll já vai ocorrer normalmente, só não exibir modal extra
+            ev.preventDefault();
+            const comprarSection = document.querySelector('#comprar');
+            if (comprarSection) {
+              comprarSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+          }
+          // Para os botões "Garantir minha cópia" e do rodapé
+          ev.preventDefault();
+          // Cria uma notificação minimalista estilo "conversão demo"
+          const modalMessage = document.createElement('div');
+          modalMessage.innerText = '🎉 Simulação de compra: Você será redirecionado para a página segura de pagamento.';
+          modalMessage.style.position = 'fixed';
+          modalMessage.style.bottom = '20px';
+          modalMessage.style.left = '50%';
+          modalMessage.style.transform = 'translateX(-50%)';
+          modalMessage.style.backgroundColor = '#000000';
+          modalMessage.style.color = 'white';
+          modalMessage.style.padding = '14px 28px';
+          modalMessage.style.borderRadius = '60px';
+          modalMessage.style.fontSize = '0.9rem';
+          modalMessage.style.fontWeight = '500';
+          modalMessage.style.zIndex = '9999';
+          modalMessage.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+          modalMessage.style.backdropFilter = 'blur(4px)';
+          modalMessage.style.fontFamily = "'Inter', sans-serif";
+          modalMessage.style.textAlign = 'center';
+          modalMessage.style.maxWidth = '90%';
+          document.body.appendChild(modalMessage);
+          
+          // animação de saída
+          setTimeout(() => {
+            modalMessage.style.opacity = '0';
+            modalMessage.style.transition = 'opacity 0.3s';
+            setTimeout(() => {
+              if (modalMessage && modalMessage.remove) modalMessage.remove();
+            }, 350);
+          }, 2800);
+          
+          // adicional: rastreio de evento de conversão fictício (apenas demonstração)
+          console.log("Evento de conversão: usuário clicou em comprar ebook");
+          // Pode-se redirecionar para link de checkout real futuramente
+          // Exemplo: window.location.href = "https://seudominio.com/checkout";
+        });
+      });
+    } else {
+      // fallback
+      const allBuyNow = document.querySelectorAll('#buy-now-btn');
+      allBuyNow.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          alert("🔒 Ambiente de demonstração: Em um site real, você seria direcionado para o checkout seguro. Adquira já seu ebook!");
+        });
+      });
+    }
+
+    // Garantir que qualquer link com href="#comprar" também role perfeitamente
+    const scrollToBuy = (e) => {
+      const target = document.querySelector('#comprar');
+      if (target && e.target.closest('a') && e.target.closest('a').getAttribute('href') === '#comprar') {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+    document.addEventListener('click', scrollToBuy);
+    
+    // pequena correção para evitar conflito de eventos duplicados
+    const heroBtn = document.querySelector('#hero-cta');
+    if (heroBtn) {
+      heroBtn.addEventListener('click', function(ev) {
+        const targetSec = document.querySelector('#comprar');
+        if (targetSec && this.getAttribute('href') === '#comprar') {
+          ev.preventDefault();
+          targetSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    }
+
+    // bônus: rastreamento de seções visíveis para analytics (sem overkill)
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // console.log(`Seção visível: ${entry.target.id || 'section'}`);
+        }
+      });
+    }, { threshold: 0.3 });
+    sections.forEach(section => observer.observe(section));
+    
+  })();
+</script>
+</body>
+</html>
+```
